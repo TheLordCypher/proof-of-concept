@@ -1,0 +1,67 @@
+//just an intro to get the code running. to be expanded later
+
+var choice= prompt('fight?');
+
+if(choice==='yes'){
+	console.log('sweet!');
+}
+else{
+	console.log('aww man!');
+}
+var warrior = prompt('choose your class. elf, paladin, sorceress, knight.');
+
+//Character class. attributes based on warrior choice
+function char(hp,atk,def,dex,specatk,specdef){
+	this.hp = hp;
+	this.atk = atk;
+	this.def = def;
+	this.dex = dex;
+	this.specatk = specatk;
+	this.specdef = specdef;
+}
+
+console.log('you chose'+' '+ warrior);
+
+//series of characters created from the char constructor above
+var elf = new char(7,4,5,9,7,8);
+var paladin = new char(8,6,9,4,6,7);
+var sorceress = new char(7,5,4,7,9,8);
+var knight = new char(8,9,8,7,4,4);
+
+var characters = [elf,paladin,sorceress,knight];
+
+// printWarrior added here just to check that attributes are correct
+var printWarrior = function(warrior){
+    console.log(warrior.hp+' '+warrior.atk+' '+warrior.def+' '+warrior.dex+' '+warrior.specatk+' '+warrior.specdef);
+};
+
+printWarrior(characters[0]);
+
+var ene = prompt('what type of foe will you fight? imp, daemonette, necromancer, corrupted knight');
+
+//enemy class. 
+function enemy(hp,atk,def,dex,specatk,specdef){
+	this.hp = hp;
+	this.atk = atk;
+	this.def = def;
+	this.dex = dex;
+	this.specatk = specatk;
+	this.specdef = specdef;
+}
+
+console.log('you chose'+' '+ene);
+
+//series of enemies created from the enemy constructor above
+var imp = new enemy(7,4,5,9,7,8);
+var daemonette = new enemy(8,6,9,4,6,7);
+var necromancer = new enemy(7,5,4,7,9,8);
+var corruptedKnight = new enemy(8,9,8,7,4,4);
+
+var enemies = [imp,daemonette,necromancer,corruptedKnight];
+
+// printEnemy added here just to check that attributes are correct
+var printEnemy = function(ene){
+    console.log(ene.hp+' '+ene.atk+' '+ene.def+' '+ene.dex+' '+ene.specatk+' '+ene.specdef);
+};
+
+printEnemy(enemies[0]);
